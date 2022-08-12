@@ -49,8 +49,12 @@ function App() {
         </select>
 
       </div>
-      <img src={countryData.flag} alt="" style={{ width: '80px', height: '30px',border:'1px solid black' }} />
-       <p>+ {countryData.callingCodes[0]}</p>
+      {countryData?.flag &&
+
+        <img src={countryData?.flag} alt="" style={{ width: '80px', height: '40px', border: '1px solid black' }} />
+      }
+
+      <input type="text" value={countryData?.callingCodes?.[0]} style={{ width: '50px' ,textAlign:'center',marginLeft:'15px'}} />
       <input className="form-control w-50 ms-5" type="tel" name="" id="" />
     </div>
   );
